@@ -21,12 +21,15 @@
   },
   "dependencies": {
     "@electron-toolkit/preload": "^3.0.0",
-    "@electron-toolkit/utils": "^3.0.0"
+    "@electron-toolkit/utils": "^3.0.0",
+    "@heathmont/moon-core-tw": "^10.12.1",
+    "@heathmont/moon-themes-tw": "^10.12.1"
   },
   "devDependencies": {
     "@electron-toolkit/eslint-config-prettier": "^2.0.0",
     "@electron-toolkit/eslint-config-ts": "^1.0.1",
     "@electron-toolkit/tsconfig": "^1.0.1",
+    "@heathmont/moon-icons-tw": "^9.28.6",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "^18.19.5",
     "@types/react": "^18.2.47",

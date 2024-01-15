@@ -8,7 +8,7 @@ export const DraggableTopBar = () => {
     return (
         <header className="draggable-top-bar">
             <button className="window-control-btn minimize-btn" onClick={handleMinimize}>
-                <Icon.Minimize className="window-icon" />
+                <Icon.Minus className="window-icon" />
             </button>
             <button className="window-control-btn maximize-btn" onClick={handleMaximize}>
                 <Icon.Maximize className="window-icon" />

@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // mode: 'jit',
-  content: ['./src/renderer/**/*.{html,js,ts,jsx,tsx}'],
+  mode: 'jit',
   theme: {
     extend: {
       fontFamily: {
@@ -12,5 +11,12 @@ module.exports = {
       }
     }
   },
+  content: [
+    './src/renderer/**/*.{html,js,ts,jsx,tsx}',
+    './node_modules/@heathmont/moon-core-tw/**/*.{js,ts,jsx,tsx}'
+  ],
+  presets: [
+    require('@heathmont/moon-core-tw/lib/private/presets/ds-moon-preset'),
+  ],
   plugins: [require('@tailwindcss/typography')]
 }
