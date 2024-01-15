@@ -13,7 +13,36 @@
     @apply h-full;
     @apply select-none;
     @apply bg-transparent;
-    @apply font-mono antialiased text-white;
+    @apply font-mono antialiased text-black;
     @apply overflow-hidden;
+  }
+
+  header {
+    @apply w-full flex justify-end items-center pr-2 h-8 bg-primary;
+    -webkit-app-regio: drag;
+  }
+  .window-control-btn {
+    @apply w-8 h-8 flex justify-center items-center bg-transparent rounded-full cursor-pointer;
+    -webkit-app-region: no-drag;
+  }
+
+  .window-control-btn:hover {
+    @apply bg-gray-200; /* Generic hover effect, adjust color as needed */
+  }
+
+  .minimize-btn:hover {
+    @apply bg-yellow-200; /* Minimize button hover color */
+  }
+
+  .maximize-btn:hover {
+    @apply bg-green-200; /* Maximize button hover color */
+  }
+
+  .close-btn:hover {
+    @apply bg-red-200; /* Close button hover color */
+  }
+
+  .window-icon {
+    @apply w-4 h-4; /* Adjust icon size as needed */
   }
 }

@@ -1,5 +1,5 @@
 import { electronApp, is, optimizer } from "@electron-toolkit/utils";
-import { BrowserWindow, app, shell } from "electron";
+import { BrowserWindow, app, ipcMain, shell } from "electron";
 import { join } from "path";
 import icon from "../../resources/icon.png?asset";
 
@@ -13,7 +13,7 @@ function createWindow(): void {
     ...(process.platform === "linux" ? { icon } : {}),
     center: true,
     title: "SnapPad",
-    frame: false,
+    frame: false, // Frameless window
     vibrancy: "under-window",
     visualEffectState: "active",
     titleBarStyle: "hidden",
@@ -24,8 +24,8 @@ function createWindow(): void {
     webPreferences: {
       preload: join(__dirname, "../preload/index.js"),
       sandbox: true,
-      contextIsolation: true,
-      experimentalFeatures: true,
+      // contextIsolation: true,
+      nodeIntegration: false,
     },
   });
 
@@ -45,6 +45,22 @@ function createWindow(): void {
   } else {
     mainWindow.loadFile(join(__dirname, "../renderer/index.html"));
   }
+
+  ipcMain.on("close-window", () => {
+    mainWindow.close();
+  });
+
+  ipcMain.on("minimize-window", () => {
+    mainWindow.minimize();
+  });
+
+  ipcMain.on("maximize-window", () => {
+    if (mainWindow.isMaximized()) {
+      mainWindow.unmaximize();
+    } else {
+      mainWindow.maximize();
+    }
+  });
 }
 
 // This method will be called when Electron has finished

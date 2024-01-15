@@ -1,4 +1,4 @@
-import { contextBridge } from "electron";
+import { contextBridge, ipcRenderer } from "electron";
 
 if (!process.contextIsolated) {
   throw new Error("contextIsolated should be enabled in the BrowserWindow");
@@ -6,7 +6,9 @@ if (!process.contextIsolated) {
 
 try {
   contextBridge.exposeInMainWorld("electron", {
-    // TODO
+    closeWindow: () => ipcRenderer.send("close-window"),
+    minimizeWindow: () => ipcRenderer.send("minimize-window"),
+    maximizeWindow: () => ipcRenderer.send("maximize-window"),
   });
 } catch (error) {
   console.error("Failed to expose electron on the preload script", error);

@@ -1,9 +1,14 @@
+import { Content, DraggableTopBar, RootLayout, Sidebar } from '@/components'
 
-function App() {
+const App = () => {
   return (
-    <div className="flex h-full items-center justify-center">
-      <span className="text-3xl text-blue-500">Hello world</span>
-    </div>
+    <>
+      <DraggableTopBar />
+      <RootLayout>
+        <Sidebar className="p-2 bg-white">SideBar</Sidebar>
+        <Content className="border-l bg-zinc-100/50 border-l-white/20">Content</Content>
+      </RootLayout>
+    </>
   )
 }
 
