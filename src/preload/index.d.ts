@@ -1,7 +1,8 @@
 declare global {
   interface Window {
-    // electron: ElectronAPI
-    context: {};
+    context: {
+      local: string;
+    };
     electron: {
       closeWindow: () => void;
       minimizeWindow: () => void;

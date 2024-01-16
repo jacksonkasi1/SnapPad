@@ -8,7 +8,7 @@ const DeleteNoteButton = ({ className, ...props }) => {
             {...props}
             variant="ghost"
             size="sm"
-            className={twMerge('bg-chichi/10 hover:bg-chichi/20', className)}
+            className={twMerge('bg-chichi-10 hover:bg-chichi/20', className)}
             icon={<GenericDelete className="text-chichi" />}
         />
     )

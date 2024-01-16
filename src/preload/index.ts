@@ -6,6 +6,8 @@ if (!process.contextIsolated) {
 
 try {
   contextBridge.exposeInMainWorld("electron", {
+    local: navigator.language,
+
     closeWindow: () => ipcRenderer.send("close-window"),
     minimizeWindow: () => ipcRenderer.send("minimize-window"),
     maximizeWindow: () => ipcRenderer.send("maximize-window"),
