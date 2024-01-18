@@ -8,7 +8,7 @@ export const NotePreviewList = ({ ...props }: ComponentProps<'ul'>) => {
     if (!noteMocks.length)
         return (
             <ul {...props} className={twMerge('text-center w-full mx-auto pt-4', props.className)}>
-                No notes Yet!
+                <span>No notes Yet!</span>
             </ul>
         )
     return (
