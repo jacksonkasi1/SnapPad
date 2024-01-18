@@ -15,6 +15,7 @@ const NotePreview = ({
 }: NotePreviewProps) => {
     return (
         <div
+            {...props}
             className={cn(
                 'cursor-pointer px-2.5 py-3 rounded-md transition-colors duration-75 bg-gohan',
                 {
@@ -23,7 +24,6 @@ const NotePreview = ({
                 },
                 className
             )}
-            {...props}
         >
             <h3 className="mb-1 font-bold truncate transition-colors text-moon-24">{title}</h3>
             <p className="inline-block w-full mb-2 font-light text-left text-moon-16">

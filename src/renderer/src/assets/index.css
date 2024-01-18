@@ -1,10 +1,9 @@
+@import '@heathmont/moon-themes-tw/lib/moon.css';
 @config "../../../../tailwind.config.js";
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import '@heathmont/moon-themes-tw/lib/moon.css';
 
 :root {
   --piccolo: 78 70 180; /* #4e46b4 */
